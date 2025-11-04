@@ -1,0 +1,12 @@
+[project]
+name = "radio-bulletin-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pandas",
+]
+
+[tool.uv.workspace]
+members = ["packages/*"]
