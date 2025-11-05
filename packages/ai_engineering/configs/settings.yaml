@@ -1,0 +1,15 @@
+### FILE: configs/settings.yaml
+
+# model: gpt-4o-mini
+# model: mistral/mistral-small-latest
+# model: mistral/mistral-medium-latest
+model: deepseek/deepseek-chat
+# model: deepseek/deepseek-reasoner
+batch_size: 1
+max_tokens: 7000
+temperature: 0
+prompt_template: packages/ai_engineering/src/prompts/entity_relation.jinja
+input: packages/shared/data/raw/test.csv
+out_dir: packages/shared/data/silver_labels
+run_name: run10
+

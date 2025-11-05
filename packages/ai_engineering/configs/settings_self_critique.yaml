@@ -1,0 +1,11 @@
+### FILE: configs/settings.yaml
+
+# model: gpt-4o-mini
+model: mistral/mistral-small-latest
+batch_size: 1
+max_tokens: 10000
+temperature: 0
+prompt_template: prompts/templates/self_critique.jinja
+preds: data/silver_labels/run10.jsonl
+
+

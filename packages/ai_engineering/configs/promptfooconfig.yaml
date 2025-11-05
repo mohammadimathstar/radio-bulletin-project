@@ -1,0 +1,75 @@
+version: 1
+prompts:
+  - file://../prompts/templates/entity_relation_promptfoo.j2
+    
+
+providers:
+  # - id: openai:gpt-4o-mini
+  #   config:
+  #     temperature: 0
+  #     max_tokens: 5000
+      # apiKey: ${OPENAI_API_KEY}
+  # - id: mistral:mistral-large-latest
+  #   config:
+  #     temperature: 0
+  #     max_tokens: 5000
+  - id: mistral:mistral-small-latest  
+    config:
+      temperature: 0
+      max_tokens: 5000
+  
+
+
+tests: 
+  - path: file://../data/eval/test.csv
+    config:
+      sample_size: 1
+    options:
+      transform: |
+        output = output.replace(/```(json|JSON)?/g, "");
+        output = output.replace(/```/g, "").trim();
+        return JSON.parse(output);  # convert cleaned string to JSON
+    assert:
+      - type: is-json
+        value: file://../guardrail/entity_relation_promptfoo.json
+        metrics: json_validity
+        
+
+defaultTest:
+
+  assert:    
+    - type: python
+      value: file://./metrics/extraction_quality.py:num_people
+      metric: num_people
+
+    - type: python
+      value: file://./metrics/extraction_quality.py:num_organizations
+      metric: num_organizations
+
+    - type: python
+      value: file://./metrics/extraction_quality.py:num_locations
+      metric: num_locations
+
+    - type: python
+      value: file://./metrics/extraction_quality.py:num_publications
+      metric: num_publications
+
+    - type: python
+      value: file://./metrics/extraction_quality.py:num_relations
+      metric: num_relations
+
+    - type: python
+      value: file://./metrics/extraction_quality.py:num_entities
+      metric: num_entities
+
+    - type: python
+      value: file://./metrics/extraction_quality.py:num_events
+      metric: num_events
+
+    
+derivedMetrics:
+  - name: 'entity_relation_ratio'
+    value: 'num_relations / (num_entities + 1)'
+  - name: extraction_quality
+    description: Weighted overall extraction quality
+    value: "0.7 * json_validity + 0.3 * entity_relation_ratio"
