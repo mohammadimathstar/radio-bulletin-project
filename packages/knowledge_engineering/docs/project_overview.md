@@ -47,9 +47,9 @@ Relations between entities are captured in two categories:
 
 1. **Factual Relations** – derived from entity attributes (stored as edges in the KG). Examples:
 
-- `HAS_NATIONALITY` → Person → Country
-- `HAS_OCCUPATION` → Person → Occupation
-- `LOCATED_IN` → Organization → Location
+- `HAS_NATIONALITY`: Person → Country
+- `HAS_OCCUPATION`: Person → Occupation
+- `LOCATED_IN`: Organization → Location
 
 2. **LLM-Extracted Semantic Relations** – extracted from bulletin text using language models. Examples:
 
@@ -76,7 +76,6 @@ The pipeline consists of **four major stages**:
 
 - Entities are **linked to Wikidata** to enrich metadata.
 - Supports:
-  - **Fuzzy string matching** using RapidFuzz
   - **Semantic similarity** using sentence embeddings
 - Adds the following Wikidata metadata:
   - `wikidata_id`, `wikidata_uri`, `wikidata_label`, `wikidata_description`
