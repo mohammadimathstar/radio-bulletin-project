@@ -50,6 +50,10 @@ Thematic clusters and representative keywords include:
 `['hitler', 'den', 'volk', 'polen', 'oorlog', 'landen', 'roosevelt', 'staten', 'rede', 'rijk', 'mussolini', 'president', 'vrede', 'europa', 'minister', 'engeland', 'dantzig']`
 
 ### 2. Diplomatic Activity and Press Coverage
+`['berlijn', 'minister', 'ambassadeur', 'londen', 'hitler', 'besprekingen', 'ontvangen', 'president', 'polen', 'hoofdstad', 'engeland', 'pers', 'ministers', 'onderhoud', 'dantzig']`
+
+
+### 3. Sports and Weather Reports  
 `['sec', 'min', 'meter', 'gewonnen', 'klasse', 'wedstrijd', 'record', 'honkbal', 'afstand', 'kilometer', 'winnaar', 'overwinning', 'regen', 'bewolkt']`
 
 
@@ -125,3 +129,4 @@ Ultimately, this project lays the groundwork for a **digital historical intellig
 
 For detailed process documentation, data schema, and KG construction methodology, see:  
 👉 [Project Overview Document](https://github.com/mohammadimathstar/radio-bulletin-project/edit/master/packages/knowledge_engineering/docs/project_overview.md)
+
