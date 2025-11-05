@@ -109,19 +109,6 @@ These approaches balance **scalability** and **accuracy**, providing a foundatio
 | KG Construction | Networkx |
 | Storage & Visualization | Neo4j graph database |
 
----
-
-## 📈 Impact and Future Work
-
-This project demonstrates a scalable and semi-automated approach to **building structured knowledge** from **unstructured historical text**.
-
-### Future directions include:
-- Scaling to **entire decades** of radio bulletins (1930s–1950s)  
-- Integrating multiple **data sources** (newspapers, speeches, archives)  
-- Implementing **automated KG validation** using LLM-based reasoning  
-- Providing a **semantic search interface** for researchers and journalists  
-
-Ultimately, this project lays the groundwork for a **digital historical intelligence system**, enabling rich exploration of how world events were communicated to the public during critical moments in history.
 
 ---
 
@@ -129,4 +116,5 @@ Ultimately, this project lays the groundwork for a **digital historical intellig
 
 For detailed process documentation, data schema, and KG construction methodology, see:  
 👉 [Project Overview Document](https://github.com/mohammadimathstar/radio-bulletin-project/edit/master/packages/knowledge_engineering/docs/project_overview.md)
+
 
